@@ -3,7 +3,7 @@ import { LoaderPage } from "../base/LoaderForm.jsx";
 import { useHistory } from "react-router-dom";
 import { useStore } from "../../store";
 
-import Banner from "./child/banner";
+import InfinityScrollGallery from "./child/banner";
 import List from "./child/list";
 
 import "./style.scss";
@@ -37,10 +37,12 @@ export default function HomePage() {
       ) : (
         <div className="home-page">
           <div className="intro-section">
-            <div className="map-img">
-              <div className="child-map map-img-1"></div>
-              <div className="child-map map-img-2"></div>
-              <div className="child-map map-img-3"></div>
+            <InfinityScrollGallery />
+            <div className="intro-section-logo">
+              <h1>GiangSensei Shop</h1>
+            </div>
+            <div className="intro-section-search">
+              <input type="text" placeholder="Search for products..." />
             </div>
           </div>
           {/* {data &&

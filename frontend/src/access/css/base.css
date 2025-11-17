@@ -1,45 +1,165 @@
 :root {
-  --bg-light: #f8f9fa;
-  --bg-dark: #121212;
-  --bg-color: #121212;
-  --text-light: #212529;
-  --text-dark: #e0e0e0;
-  --primary-light: #007bff;
-  --primary-dark: #1e90ff;
-  --header-bg: #121212aa;
+  /* Nền chính */
+  --bg-primary: light-dark(#ffffff, #121212);
+  --bg-secondary: light-dark(#f8f9fa, #1e1e1e);
+  --bg: light-dark(#f8f8f8, #313131);
 
-  --border-dark: #313131;
-  --border-light: #e0e0e0;
+  /* Text */
+  --text-primary: light-dark(#212529, #e0e0e0);
+  --text-secondary: light-dark(#6c757d, #b0b0b0);
+  --text-light: light-dark(#ffffff, #ffffff);
 
-  /* Độ trong suốt cho light mode */
-  --light-5: rgba(248, 249, 250, 0.05);
-  --light-10: rgba(248, 249, 250, 0.1);
-  --light-30: rgba(248, 249, 250, 0.3);
-  --light-60: rgba(248, 249, 250, 0.6);
-  --light-100: rgba(248, 249, 250, 1);
+  /* Primary colors */
+  --primary: light-dark(#007bff, #1e90ff);
+  --secondary: light-dark(#6c757d, #868e96);
+  --success: light-dark(#28a745, #2ecc71);
+  --danger: light-dark(#dc3545, #e74c3c);
+  --warning: light-dark(#ffc107, #f1c40f);
+  --info: light-dark(#17a2b8, #5bc0de);
+  --light: light-dark(#f8f9fa, #1c1c1c);
+  --dark: light-dark(#343a40, #121212);
 
-  /* Độ trong suốt cho dark mode */
-  --dark-5: rgba(18, 18, 18, 0.05);
-  --dark-10: rgba(18, 18, 18, 0.1);
-  --dark-30: rgba(18, 18, 18, 0.3);
-  --dark-60: rgba(18, 18, 18, 0.6);
-  --dark-100: rgba(18, 18, 18, 1);
+  /* Border */
+  --border-light: light-dark(#dee2e6, #495057);
+  --border-dark: light-dark(#495057, #777777);
+
+  /* Hover states */
+  --hover-primary: light-dark(#0056b3, #0d6efd);
+  --hover-danger: light-dark(#bd2130, #ff4c4c);
+  --hover-success: light-dark(#1e7e34, #28a745);
+
+  /* Base colors */
+  --red: light-dark(#ff0000, #ff4c4c);
+  --green: light-dark(#008000, #00ff00);
+  --blue: light-dark(#0000ff, #4c4cff);
+  --yellow: light-dark(#ffff00, #ffff66);
+  --orange: light-dark(#ffa500, #ffb84d);
+  --purple: light-dark(#800080, #b266b2);
+  --pink: light-dark(#ff69b4, #ff99c2);
+  --cyan: light-dark(#00ffff, #66ffff);
+  --teal: light-dark(#008080, #00b3b3);
+  --brown: light-dark(#8b4513, #a65c39);
+  --gray: light-dark(#808080, #b0b0b0);
+
+  /* Alpha 20% */
+  --red-alpha-20: light-dark(rgba(255, 0, 0, 0.2), rgba(255, 76, 76, 0.2));
+  --green-alpha-20: light-dark(rgba(0, 128, 0, 0.2), rgba(0, 255, 0, 0.2));
+  --blue-alpha-20: light-dark(rgba(0, 0, 255, 0.2), rgba(76, 76, 255, 0.2));
+  --yellow-alpha-20: light-dark(
+    rgba(255, 255, 0, 0.2),
+    rgba(255, 255, 102, 0.2)
+  );
+  --orange-alpha-20: light-dark(
+    rgba(255, 165, 0, 0.2),
+    rgba(255, 184, 77, 0.2)
+  );
+  --purple-alpha-20: light-dark(
+    rgba(128, 0, 128, 0.2),
+    rgba(178, 102, 178, 0.2)
+  );
+  --pink-alpha-20: light-dark(
+    rgba(255, 105, 180, 0.2),
+    rgba(255, 153, 194, 0.2)
+  );
+  --cyan-alpha-20: light-dark(rgba(0, 255, 255, 0.2), rgba(102, 255, 255, 0.2));
+  --teal-alpha-20: light-dark(rgba(0, 128, 128, 0.2), rgba(0, 179, 179, 0.2));
+  --brown-alpha-20: light-dark(rgba(139, 69, 19, 0.2), rgba(166, 92, 57, 0.2));
+  --gray-alpha-20: light-dark(
+    rgba(128, 128, 128, 0.2),
+    rgba(176, 176, 176, 0.2)
+  );
+
+  /* Alpha 40% */
+  --red-alpha-40: light-dark(rgba(255, 0, 0, 0.4), rgba(255, 76, 76, 0.4));
+  --green-alpha-40: light-dark(rgba(0, 128, 0, 0.4), rgba(0, 255, 0, 0.4));
+  --blue-alpha-40: light-dark(rgba(0, 0, 255, 0.4), rgba(76, 76, 255, 0.4));
+  --yellow-alpha-40: light-dark(
+    rgba(255, 255, 0, 0.4),
+    rgba(255, 255, 102, 0.4)
+  );
+  --orange-alpha-40: light-dark(
+    rgba(255, 165, 0, 0.4),
+    rgba(255, 184, 77, 0.4)
+  );
+  --purple-alpha-40: light-dark(
+    rgba(128, 0, 128, 0.4),
+    rgba(178, 102, 178, 0.4)
+  );
+  --pink-alpha-40: light-dark(
+    rgba(255, 105, 180, 0.4),
+    rgba(255, 153, 194, 0.4)
+  );
+  --cyan-alpha-40: light-dark(rgba(0, 255, 255, 0.4), rgba(102, 255, 255, 0.4));
+  --teal-alpha-40: light-dark(rgba(0, 128, 128, 0.4), rgba(0, 179, 179, 0.4));
+  --brown-alpha-40: light-dark(rgba(139, 69, 19, 0.4), rgba(166, 92, 57, 0.4));
+  --gray-alpha-40: light-dark(
+    rgba(128, 128, 128, 0.4),
+    rgba(176, 176, 176, 0.4)
+  );
+
+  /* Shadow */
+  --shadow-light: light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+  --shadow-dark: light-dark(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+
+  /* Màu nền chính */
+  --bg-color: light-dark(#f8f9fa, #121212);
+
+  /* Text */
+  --text-color: light-dark(#212529, #e0e0e0);
+
+  /* Primary */
+  --primary: light-dark(#007bff, #1e90ff);
+
+  /* Header background */
+  --header-bg: light-dark(#ffffffaa, #121212aa);
+
+  /* Border */
+  --border-color: light-dark(#e0e0e0, #313131);
+
+  /* Transparent levels – tự thay đổi theo mode */
+  --transparent-5: light-dark(
+    rgba(248, 249, 250, 0.05),
+    rgba(18, 18, 18, 0.05)
+  );
+  --transparent-10: light-dark(rgba(248, 249, 250, 0.1), rgba(18, 18, 18, 0.1));
+  --transparent-30: light-dark(rgba(248, 249, 250, 0.3), rgba(18, 18, 18, 0.3));
+  --transparent-60: light-dark(rgba(248, 249, 250, 0.6), rgba(18, 18, 18, 0.6));
+  --transparent-100: light-dark(rgba(248, 249, 250, 1), rgba(18, 18, 18, 1));
+
+  --retransparent-5: light-dark(
+    /* Light Mode: Áp dụng màu tối/đen */ rgba(18, 18, 18, 0.05),
+    /* Dark Mode: Áp dụng màu sáng/trắng */ rgba(248, 249, 250, 0.05)
+  );
+  --retransparent-10: light-dark(
+    rgba(18, 18, 18, 0.1),
+    rgba(248, 249, 250, 0.1)
+  );
+  --retransparent-30: light-dark(
+    rgba(18, 18, 18, 0.3),
+    rgba(248, 249, 250, 0.3)
+  );
+  --retransparent-60: light-dark(
+    rgba(18, 18, 18, 0.6),
+    rgba(248, 249, 250, 0.6)
+  );
+  --retransparent-100: light-dark(rgba(18, 18, 18, 1), rgba(248, 249, 250, 1));
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* color-scheme: dark; */
+  color-scheme: dark;
   scrollbar-width: thin;
-  scrollbar-color: light-dark(rgba(0, 0, 0, 0.4),rgba(255, 255, 255, 0.4)) transparent;
+  scrollbar-color: light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.4))
+    transparent;
 }
 
 body {
   position: relative;
   width: 100%;
   height: 100dvh;
-  background: light-dark(var(--bg-light), var(--bg-dark));
+  background: var(--bg);
 }
 
 .page-container {

@@ -1,15 +1,83 @@
-.home-page-banner {
-  position: relative;
-  height: auto;
-  min-height: 100px;
-  background-color: #c7c7c7;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+// Định nghĩa biến
+$item-width: 210px; // Chiều rộng item + margin
+$scroll-duration-slow: 60s;
+$scroll-duration-fast: 60s;
+$item-count: 9; // Số lượng item ban đầu
+$infinite-count: 3; // Số lần lặp lại
+$total-items: $item-count * $infinite-count;
+$total-width: $total-items * $item-width;
 
-  #banner-img {
-    position: relative;
-    width: 100%;
-    height: auto;
+// 1. Keyframes cho cuộn trái sang phải (Div 1 & 3)
+@keyframes scroll-left {
+  // Bắt đầu từ ngoài màn hình bên phải (0) đến ngoài màn hình bên trái (-Tổng chiều rộng)
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% / #{$infinite-count}));
+  }
+}
+
+// 2. Keyframes cho cuộn phải sang trái (Div 2)
+@keyframes scroll-right {
+  // Bắt đầu từ ngoài màn hình bên trái (0) đến ngoài màn hình bên phải (+Tổng chiều rộng)
+  from {
+    transform: translateX(calc(-100% / #{$infinite-count}));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+// Container chính
+.infinity-scroll-gallery {
+  overflow: hidden; // Giấu phần bị tràn ra ngoài
+  padding: 20px 0;
+  width: 100%;
+
+  // Mỗi hàng ảnh
+  .gallery-row {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap; // Giữ các item trên một hàng
+    margin: 20px 0;
+
+    // Chiều rộng tổng của tất cả item (3 lần lặp lại)
+    width: $total-width;
+
+    // Thiết lập animation mặc định
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    // 3. Hiệu ứng dừng khi hover
+    &.paused {
+      animation-play-state: paused !important;
+    }
+
+    .gallery-item {
+      flex-shrink: 0; // Quan trọng: Ngăn item bị co lại
+      width: $item-width - 10px; // Chiều rộng ảnh
+      margin-right: 10px; // Khoảng cách giữa các ảnh
+
+      img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        // border: 1px solid;
+        display: block;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  // 4. Áp dụng animation cho từng chiều
+  .scroll-left {
+    animation-name: scroll-left;
+    animation-duration: $scroll-duration-slow; // Tốc độ cuộn 1
+  }
+
+  .scroll-right {
+    animation-name: scroll-right;
+    animation-duration: $scroll-duration-fast; // Tốc độ cuộn 2 (có thể khác nhau)
   }
 }
